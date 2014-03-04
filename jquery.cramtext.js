@@ -20,6 +20,8 @@
           var pw = t.parent().width() * scaleX; 
           var h = t.height();
           var ph = t.parent().height() * scaleY;
+
+          // Adjust down
           while(w > pw || h > ph){
               var fontSize = parseInt(t.css("font-size"));
               fontSize = fontSize - 1 + "px";
@@ -27,6 +29,8 @@
               w = t.width();
               h = t.height();
           }
+
+          // Adjust up
           while(w < pw && h < ph){
               var fontSize = parseInt(t.css("font-size"));
               fontSize = fontSize + 1 + "px";

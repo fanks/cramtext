@@ -1,7 +1,7 @@
 Cramtext
 ========
 
-jQuery plugin that squeezes a text into a div. Slow but gets the job done. Inspired by fittext.js https://github.com/davatron5000/FitText.js
+jQuery plugin that squeezes a text into a div. Slow but gets the job done. Inspired by FitText.js https://github.com/davatron5000/FitText.js
 
 
 ## How to use

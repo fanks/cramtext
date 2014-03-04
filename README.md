@@ -8,8 +8,8 @@ jQuery plugin that squeezes a text into a div. Slow but gets the job done. Inspi
 Just include script and:
 
 ```javascript
-jQuery(".crammedText").cramText(); // Cram text for classes 'crammedText'
-jQuery(".anyClassOrID").cramText(0.8, 0.9); // Optionally change scaleX and scaleY (i.e. add some padding)
+jQuery(".someElements").cramText(); // Cram text for classes 'crammedText'
+jQuery(".someOtherElements").cramText(0.8, 0.9); // Optionally change scaleX and scaleY (i.e. add some padding)
 ```
 
 ## Contribute

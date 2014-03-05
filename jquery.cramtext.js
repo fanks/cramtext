@@ -19,7 +19,8 @@
           var w = t.width();
           var pw = t.parent().width() * scaleX; 
           var h = t.height();
-          var ph = t.parent().height() * scaleY;
+          var originalHeight = t.parent().height();
+          var ph = originalHeight * scaleY;
 
           // Adjust up
           while(w < pw && h < ph){
@@ -40,7 +41,7 @@
           }
 
           // fix padding
-          var padding = (ph-h)/2;
+          var padding = (originalHeight-h)/2;
           t.css({'margin-top':padding});
         }
         

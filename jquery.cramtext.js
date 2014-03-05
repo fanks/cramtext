@@ -10,7 +10,7 @@
 (function( $ ){
 
   $.fn.cramText = function( scaleX, scaleY ) {
-    if (!scaleX) paddingUpscaleXDown = 1;
+    if (!scaleX) scaleX = 1;
     if (!scaleY) scaleY = 1;
     
     return this.each(function(i, t){
@@ -21,6 +21,15 @@
           var h = t.height();
           var ph = t.parent().height() * scaleY;
 
+          // Adjust up
+          while(w < pw && h < ph){
+              var fontSize = parseInt(t.css("font-size"));
+              fontSize = fontSize + 1 + "px";
+              t.css({'font-size':fontSize});
+              w = t.width();
+              h = t.height();
+          }
+
           // Adjust down
           while(w > pw || h > ph){
               var fontSize = parseInt(t.css("font-size"));
@@ -30,14 +39,6 @@
               h = t.height();
           }
 
-          // Adjust up
-          while(w < pw && h < ph){
-              var fontSize = parseInt(t.css("font-size"));
-              fontSize = fontSize + 1 + "px";
-              t.css({'font-size':fontSize});
-              w = t.width();
-              h = t.height();
-          }
           // fix padding
           var padding = (ph-h)/2;
           t.css({'margin-top':padding});

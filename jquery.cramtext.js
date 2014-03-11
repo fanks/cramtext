@@ -14,6 +14,22 @@
     if (!scaleY) scaleY = 1;
     
     return this.each(function(i, t){
+        
+        var delay = (function(){
+          var timer = 0;
+          return function(callback, ms){
+            clearTimeout (timer);
+            timer = setTimeout(callback, ms);
+          };
+        })();
+
+        var attemptResize = function(){
+           delay(function(){
+              console.log("resize");
+              resizer();
+            }, 250);
+        }
+
         var resizer = function(){
           t = $(t);
           var w = t.width();
@@ -49,7 +65,7 @@
         resizer();
 
         // Call on resize. Opera debounces their resize by default.
-        $(window).on('resize.cramtext orientationchange.cramtext', resizer);
+        $(window).on('resize.cramtext orientationchange.cramtext', attemptResize);
     });
   };
 

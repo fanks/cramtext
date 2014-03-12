@@ -14,7 +14,6 @@
     if (!scaleY) scaleY = 1;
     
     return this.each(function(i, t){
-        
         var delay = (function(){
           var timer = 0;
           return function(callback, ms){
@@ -38,6 +37,8 @@
           var originalHeight = t.parent().height();
           var ph = originalHeight * scaleY;
 
+          if(w == 0 || h == 0) return;
+ 
           // Adjust up
           while(w < pw && h < ph){
               var fontSize = parseInt(t.css("font-size"));

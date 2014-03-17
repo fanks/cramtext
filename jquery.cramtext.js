@@ -39,20 +39,22 @@
 
           if(w == 0 || h == 0) return;
  
+          var fontSize = 1;
           // Adjust up
           while(w < pw && h < ph){
-              var fontSize = parseInt(t.css("font-size"));
-              fontSize = fontSize + 1 + "px";
-              t.css({'font-size':fontSize});
+              fontSize = parseInt(t.css("font-size"));
+              var fs = fontSize + 1 + "px";
+              t.css({'font-size':fs});
               w = t.width();
               h = t.height();
           }
 
           // Adjust down
-          while(w > pw || h > ph){
-              var fontSize = parseInt(t.css("font-size"));
-              fontSize = fontSize - 1 + "px";
-              t.css({'font-size':fontSize});
+          while((w > pw || h > ph) && fontSize > 0){
+
+              fontSize = parseInt(t.css("font-size"));
+              var fs = fontSize - 1 + "px";
+              t.css({'font-size':fs});
               w = t.width();
               h = t.height();
           }
